@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404163623) do
+ActiveRecord::Schema.define(version: 20140404181846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "genres", force: true do |t|
     t.string "name"
+    t.string "slug"
   end
 
   create_table "genres_movies", force: true do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140404163623) do
 
   create_table "movies", force: true do |t|
     t.string "name"
+    t.string "slug"
   end
 
 end

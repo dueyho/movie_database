@@ -1,0 +1,16 @@
+<h1>Genres</h1>
+
+<ul><% @genres.each do |genre| %>
+  <li class='titles'><a href="/genres/<%= genre.slug %>"><%= genre.name %></a></li>
+  <% end %>
+</ul>
+
+
+
+
+<h2> Add Genres </h2>
+<form action="/genres/" method="post">
+  <label for="genre_name"> Name:</label>
+  <input id="genre_name" name="genre[name]" type="text">
+  <button class="btn btn-success"> Add Genre</button>
+</form>

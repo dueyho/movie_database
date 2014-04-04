@@ -1,0 +1,21 @@
+<h1><%= @genre.name %></h1>
+
+
+<p>
+  <a class="btn btn-danger"
+    href="/genres/<%= @genre.slug %>"
+    data-method="delete"
+    rel="nofollow">Delete</a>
+</p>
+
+
+<div class="edit_form">
+  <h3>Edit Genre</h3>
+  <form action="/genres/<%= @genre.slug %>" method="post">
+    <input name="_method" type="hidden" value="patch">
+    <label for="genre_name"> Name:</label>
+    <input id="genre_name" name="genre[name]" type="text" value="<%= @genre.name %>">
+    <input name="params[slug]" type="hidden" value="genre[name]">
+    <button class="btn btn-success"> Update</button>
+</form>
+</div>

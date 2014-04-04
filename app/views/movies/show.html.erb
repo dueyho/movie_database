@@ -1,0 +1,21 @@
+<h1><%= @movie.name %></h1>
+
+
+<p>
+  <a class="btn btn-danger"
+    href="/movies/<%= @movie.slug %>"
+    data-method="delete"
+    rel="nofollow">Delete</a>
+</p>
+
+
+<div class="edit_form">
+  <h3>Edit Movie</h3>
+  <form action="/movies/<%= @movie.slug %>" method="post">
+    <input name="_method" type="hidden" value="patch">
+    <label for="movie_name"> Name:</label>
+    <input id="movie_name" name="movie[name]" type="text" value="<%= @movie.name %>">
+    <input name="params[slug]" type="hidden" value="movie[name]">
+    <button class="btn btn-success"> Update</button>
+</form>
+</div>
