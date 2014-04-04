@@ -7,6 +7,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'twitter-bootstrap-rails'
 
 group :development do
   gem 'better_errors'

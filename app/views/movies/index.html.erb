@@ -6,22 +6,25 @@
 </ul>
 
 
-
-
-<h2> Add Movies </h2>
+<h3> Add Movies </h3>
 <form action="/movies/" method="post">
   <label for="movie_name"> Name:</label>
   <input id="movie_name" name="movie[name]" type="text">
+  <label for="movie_url"> Trailer URL:</label>
+  <input id="movie_url" name="movie[url]" type="text">
   <br><br>
   <label for="genre_movie"> Genre:</label>
 
   <% @genres.each do |genre| %>
   <div class="checkbox">
     <label>
-      <input type="checkbox" name="genre[id]" value="<%= genre.id %>"><%= genre.name %>
+      <input type="checkbox" name="genre[]" value="<%= genre.id %>"><%= genre.name %>
     </label>
   </div>
   <% end %>
 
   <button class="btn btn-success"> Add Movie</button>
 </form>
+
+<br>
+<a href="/genres">See Movies by Genres</a>

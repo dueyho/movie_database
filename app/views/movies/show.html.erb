@@ -1,14 +1,5 @@
 <h1><%= @movie.name %></h1>
 
-
-<p>
-  <a class="btn btn-danger"
-    href="/movies/<%= @movie.slug %>"
-    data-method="delete"
-    rel="nofollow">Delete</a>
-</p>
-
-
 <div class="edit_form">
   <h3>Edit Movie</h3>
   <form action="/movies/<%= @movie.slug %>" method="post">
@@ -19,3 +10,14 @@
     <button class="btn btn-success"> Update</button>
 </form>
 </div>
+
+   <iframe width="960" height="715" src="<%= @movie.url.gsub(/watch\?v=/, 'embed/') %>" frameborder="0" allowfullscreen></iframe>
+
+<p>
+  <a class="btn btn-danger"
+    href="/movies/<%= @movie.slug %>"
+    data-method="delete"
+    rel="nofollow">Delete</a>
+</p>
+
+<a href="/movies">Back</a>

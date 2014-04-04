@@ -11,8 +11,10 @@ class MoviesController < ApplicationController
     @movie = Movie.create(params[:movie])
 
     if params[:genre] != nil
-      type_of_movie = Genre.find(params[:genre][:id])
-      @movie.genres << type_of_movie
+      type_of_movie = Genre.where(:id => params[:genre])
+      type_of_movie.each do |type|
+        @movie.genres << type
+      end
 
       if @movie.save
         redirect_to("/movies")
